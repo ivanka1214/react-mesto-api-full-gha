@@ -99,7 +99,7 @@ class Api {
 
 /*создаю экземпляр класса Api*/
 const api = new Api({
-  baseUrl: 'http://mesto-ant.nomoredomainsrocks.ru',
+  baseUrl: 'https://mesto-ant.nomoredomainsrocks.ru',
  
 });
 
