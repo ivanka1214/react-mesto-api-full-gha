@@ -9,9 +9,9 @@
 
 ## Ссылки на проект
 
-IP 158.160.98.164
+IP 84.201.134.135
 
-Frontend mesto-aaa.nomoredomainsrocks.ru
+Frontend https://mesto-aaa.nomoredomainsrocks.ru
 
-Backend mesto-ant.nomoredomainsrocks.ru
+Backend https://mesto-ant.nomoredomainsrocks.ru
 
