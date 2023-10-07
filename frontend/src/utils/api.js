@@ -99,7 +99,7 @@ class Api {
 
 /*создаю экземпляр класса Api*/
 const api = new Api({
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'http://mesto-aaa.nomoredomainsrocks.ru:3000',
  
 });
 
