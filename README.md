@@ -9,9 +9,9 @@
 
 ## Ссылки на проект
 
-IP 150.12.12.34
+IP 
 
-Frontend https://mesto-aaa.nomoredomainsrocks.ru
+Frontend 
 
-Backend https://mesto-ant.nomoredomainsrocks.ru
+Backend 
 
