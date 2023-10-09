@@ -41,6 +41,7 @@ function App() {
   const [isSuccessful, setIsSuccessful] = useState(false)
   const [isError, setIsError] = useState(false)
   const [loggedIn, setLoggedIn] = useState(false)
+  const [isCheckToken, setIsCheckToken] = useState(true)
   //переменная состояния попапов
   const isOpen = isEditProfilePopupOpen || isAddPlacePopupOpen || isEditAvatarPopupOpen || isDeletePopupOpen || isImagePopupOpen || isSuccessful || isError
 
@@ -72,11 +73,15 @@ function App() {
     if (localStorage.jwt) {
       getUserData(localStorage.jwt)
         .then(res => {
-          setDataUser(res.data.email)
+          setDataUser(res.email)
           setLoggedIn(true)
+          setIsCheckToken(false)
           navigate('/')
         })
-        .catch(err => console.log(`Ошибкак авторизации повторном входе ${err}`))
+        .catch(err => console.log(`Ошибкак авторизации при повторном входе ${err}`))
+    } else {
+      setIsCheckToken(false)
+      setLoggedIn(false)
     }
   }, [navigate])
 
@@ -227,18 +232,19 @@ function App() {
               onCardLike={handleLike}
               cards={cards}
               isLoading={isLoadingCards}
-              loggedIn={loggedIn} />
+              loggedIn={loggedIn}
+              isCheckToken={isCheckToken}  />
             } />
             <Route path='/sign-up' element={
               <>
                 <Header name='signup' />
-                <Main name='signup' handleRegister={handleRegister} />
+                <Main name='signup' isCheckToken = {isCheckToken} handleRegister={handleRegister} />
               </>
             } />
             <Route path='/sign-in' element={
               <>
                 <Header name='signin' />
-                <Main name='signin' handleLogin={handleLogin} />
+                <Main name='signin' isCheckToken = {isCheckToken} handleLogin={handleLogin} />
               </>
             } />
             <Route path='*' element={<Navigate to='/' />} />
